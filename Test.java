@@ -15,8 +15,7 @@ public class Test {
         // Player's total score
         int playerScore = 0;
 
-        // Welcome message
-        System.out.println("Welcome to the card game! Try to reach 21 without going over.");
+        intro();
 
         // Flag to keep track of whether the player wants to keep playing
         boolean keepPlaying = true;
@@ -77,5 +76,14 @@ public class Test {
         // Display the player's final score after the game ends
         System.out.println("Your final score: " + playerScore);
         scanner.close(); // Close the scanner
+    }
+
+    public static void intro() {
+        // Welcome message
+        System.out.println("Welcome to blackjack! The goal is to reach 21 without going over.");
+        System.out.println("If a player's hand goes over 21, it's called a 'bust' and they lose the round. ");
+        System.out.println("If a player's hand is closer to 21 than the dealer's, they win. "); 
+        System.out.println("If the dealer busts, all remaining players win.");
+        System.out.println("If neither player nor dealer busts, the player with the highest hand wins. ");
     }
 }

@@ -1,4 +1,4 @@
-package cardgame;
+package blackjack;
 
 // The Card class represents an individual card in the deck
 public class Card {

@@ -1,5 +1,4 @@
 package blackjack;
-
 // The Card class represents an individual card in the deck
 public class Card {
 
@@ -8,10 +7,10 @@ public class Card {
         HEARTS, DIAMONDS, CLUBS, SPADES
     }
 
-    // Enum for ranks with values (e.g., Ace is 11, King/Queen/Jack are 10)
+    // Enum for ranks with values (e.g., Ace is 1, King/Queen/Jack are 10)
     public enum Rank {
-        TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7),
-        EIGHT(8), NINE(9), TEN(10), JACK(10), QUEEN(10), KING(10), ACE(11);
+        ACE(1), TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7),
+        EIGHT(8), NINE(9), TEN(10), JACK(10), QUEEN(10), KING(10);
 
         // Value of the card in a game (e.g., Jack = 10 points)
         private final int value;

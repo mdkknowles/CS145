@@ -4,10 +4,18 @@
 // Class: CS&145
 
 public class LetterInventory {
+    private int[] inventory = new int[26];
     /* This method constructs an inventory (a count) of the alphabetic letters in the given string, 
     ignoring the case of letters and ignoring any non-alphabetic characters. */
     public LetterInventory(String data) {
-
+        data = data.toUpperCase();
+        for ( int i = 0; i < data.length(); i++ ) {
+            char ch = data.charAt(i);
+            int chInt = ch - 65;
+            if ( 0 <= chInt && 25 >= chInt ) {
+                this.inventory[chInt]++;
+            }
+        }
     }
 
     // This method returns a count of how many of this letter are in the inventory
@@ -27,7 +35,7 @@ public class LetterInventory {
     
     // This method returns true if this inventory is empty which means that all counts are 0
     public boolean isEmpty() {
-
+        return inventory == null;
     }
 
     /* This method returns a String representation of the inventory with the letters all in lowercase 
@@ -36,16 +44,29 @@ public class LetterInventory {
 
     }
 
-    /* This method constructs and returns a new LetterInventory object 
-    that represents the sum of this letter inventory and the other given LetterInventory */
-    public LetterInventory add() {
-
+    /* This method is called on a LetterInventory object and adds the input string to the inventory */
+    public void add(String input) {
+        input = input.toUpperCase();
+        for ( int i = 0; i < input.length(); i++ ) {
+            char ch = input.charAt(i);
+            int chInt = ch - 65;
+            if ( 0 <= chInt && 25 >= chInt ) {
+                this.inventory[chInt]++;
+            }
+        }
     }
 
     /* This method constructs and returns a new LetterInventory object that represents 
     the result of subtracting the other inventory from this inventory 
     (i.e., subtracting the counts in the other inventory from this object’s counts) */
-    public LetterInventory substract() {
-
+    public void substract(String input) {
+        input = input.toUpperCase();
+        for ( int i = 0; i < input.length(); i++ ) {
+            char ch = input.charAt(i);
+            int chInt = ch - 65; // Cast the char as an int and normalize it to be between 0 and 25 inclusive.
+            if ( 0 <= chInt && 25 >= chInt ) {
+                this.inventory[chInt]--; // Decrement the inventory aryay according to the char int.
+            }
+        }
     }
 }

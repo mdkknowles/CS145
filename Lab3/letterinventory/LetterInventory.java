@@ -1,21 +1,16 @@
-// Name: Jasia Ernest, Abdul Rahman, and Micheal Knowles
-// Assignment: Lab 3 - Letter Inventory
-// Date: October 11 2024
-// Class: CS&145
+package letterinventory;
 
 public class LetterInventory {
-    private int[] inventory = new int[26];
-    /* This method constructs an inventory (a count) of the alphabetic letters in the given string, 
-    ignoring the case of letters and ignoring any non-alphabetic characters. */
-    public LetterInventory(String data) {
-        data = data.toUpperCase();
-        for ( int i = 0; i < data.length(); i++ ) {
-            char ch = data.charAt(i);
-            int chInt = ch - 65;
-            if ( 0 <= chInt && 25 >= chInt ) {
-                this.inventory[chInt]++;
-            }
-        }
+    // The LetterInventory class has one single dimensional array as a field.
+    private int[] inventory;
+    /* The following constructor method LetterInventory() initializes the inventory
+       field with a 26 element empty integer array. */
+    public LetterInventory() {
+        this.inventory = new int[26];
+    }
+
+    public int[] getArray() {
+        return this.inventory;
     }
 
     // This method returns a count of how many of this letter are in the inventory
@@ -44,7 +39,12 @@ public class LetterInventory {
 
     }
 
-    /* This method is called on a LetterInventory object and adds the input string to the inventory */
+    /* This method is called on a LetterInventory object and adds the input string to the inventory.
+     * It iterates over the string, which has been cast to upper case, using a for loop and extracts
+     * the char with charAt(i) where i is the index. The char is subtracted by an offset of 65 to bring
+     * the A-Z integer representation within the size of the array.  It is then saved to the array if within
+     * the bounds of 0 and 25 inclusive.
+    */
     public void add(String input) {
         input = input.toUpperCase();
         for ( int i = 0; i < input.length(); i++ ) {
@@ -56,10 +56,10 @@ public class LetterInventory {
         }
     }
 
-    /* This method constructs and returns a new LetterInventory object that represents 
-    the result of subtracting the other inventory from this inventory 
-    (i.e., subtracting the counts in the other inventory from this object’s counts) */
-    public void substract(String input) {
+    /* This method operates in the same way as the add() method.
+     * It instead decrements the array element using --.
+     */
+    public void subtract(String input) {
         input = input.toUpperCase();
         for ( int i = 0; i < input.length(); i++ ) {
             char ch = input.charAt(i);

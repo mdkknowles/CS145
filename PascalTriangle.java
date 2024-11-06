@@ -1,3 +1,8 @@
+// Contributors:    Abdul Rahman Said and Michael Knowles
+// Assignment:      Lab 5 - PascalTriangle
+// Date:            11/5/2024
+// Class:           CS&145
+
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.LinkedList;

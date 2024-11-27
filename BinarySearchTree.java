@@ -10,20 +10,19 @@ public class BinarySearchTree {
         this.root = null;
     }
 
-
-    public void add(int key, String firstName, String lastName, String address, String email, String phone) {
-        root = addRecursively(root, key, firstName, lastName, address, email, phone);
+    public void add(int key, String firstName, String lastName, String address, String city, String state, String postal, String email, String phone) {
+        root = addRecursively(root, key, firstName, lastName, address, city, state, postal, email, phone);
     }
 
     // Recursive helper for adding a new node
-    private Node addRecursively(Node current, int key, String firstName, String lastName, String address, String email, String phone) {
+    private Node addRecursively(Node current, int key, String firstName, String lastName, String address, String city, String state, String postal, String email, String phone) {
         if (current == null) {
-            return new Node(key, firstName, lastName, address, email, phone); // Create a new node if position is empty
+            return new Node(key, firstName, lastName, address, city, state, postal, email, phone); // Create a new node if position is empty
         }
         if (key < current.key) {
-            current.left = addRecursively(current.left, key, firstName, lastName, address, email, phone); // Traverse left
+            current.left = addRecursively(current.left, key, firstName, lastName, address, city, state, postal, email, phone); // Traverse left
         } else if (key > current.key) {
-            current.right = addRecursively(current.right, key, firstName, lastName, address, email, phone); // Traverse right
+            current.right = addRecursively(current.right, key, firstName, lastName, address, city, state, postal, email, phone); // Traverse right
         }
         return current;
     }
@@ -62,6 +61,9 @@ public class BinarySearchTree {
             current.firstName = smallest.firstName;
             current.lastName = smallest.lastName;
             current.address = smallest.address;
+            current.city = smallest.city;
+            current.state = smallest.state;
+            current.postal = smallest.postal;
             current.email = smallest.email;
             current.phone = smallest.phone;
             current.right = deleteRecursively(current.right, smallest.key);
